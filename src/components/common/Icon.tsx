@@ -49,5 +49,7 @@ interface IconProps {
 
 export function Icon({ name, className, size = 24 }: IconProps) {
   const LucideIconComponent = icons[name];
-  return <LucideIconComponent aria-hidden="true" className={className} size={size} strokeWidth={1.8} />;
+  return (
+    <LucideIconComponent aria-hidden="true" className={className} size={size} strokeWidth={1.8} />
+  );
 }

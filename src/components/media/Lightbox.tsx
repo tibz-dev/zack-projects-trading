@@ -27,7 +27,8 @@ export function Lightbox({ images, initialIndex, open, onClose }: LightboxProps)
   useEffect(() => {
     if (!open || images.length === 0) return undefined;
 
-    openerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    openerRef.current =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 

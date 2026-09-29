@@ -33,8 +33,14 @@ async function processImage(source) {
 
   for (const width of widths.filter((candidate) => candidate <= sourceWidth)) {
     const pipeline = sharp(source).rotate().resize({ width, withoutEnlargement: true });
-    await pipeline.clone().avif({ quality: 55 }).toFile(join(outputDirectory, `${stem}-${width}.avif`));
-    await pipeline.clone().webp({ quality: 78 }).toFile(join(outputDirectory, `${stem}-${width}.webp`));
+    await pipeline
+      .clone()
+      .avif({ quality: 55 })
+      .toFile(join(outputDirectory, `${stem}-${width}.avif`));
+    await pipeline
+      .clone()
+      .webp({ quality: 78 })
+      .toFile(join(outputDirectory, `${stem}-${width}.webp`));
   }
 
   console.log(`Processed ${source}`);

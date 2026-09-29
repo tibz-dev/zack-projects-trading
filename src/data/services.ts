@@ -4,7 +4,8 @@ export const services: readonly ServiceItem[] = [
   {
     slug: 'new-builds',
     title: 'New House Builds',
-    shortDescription: 'Residential construction from site preparation through the main building stages.',
+    shortDescription:
+      'Residential construction from site preparation through the main building stages.',
     description:
       'Construction support for new residential builds, coordinated around the agreed scope, site requirements and material needs.',
     bullets: ['Site and build planning', 'Main construction works', 'Finishing coordination'],
@@ -40,16 +41,22 @@ export const services: readonly ServiceItem[] = [
   {
     slug: 'electrical',
     title: 'Electrical Work',
-    shortDescription: 'Electrical work as part of construction, renovation and property improvement projects.',
+    shortDescription:
+      'Electrical work as part of construction, renovation and property improvement projects.',
     description:
       'Electrical work can be included within a broader project scope or discussed as a specific requirement for a property.',
-    bullets: ['Construction-related electrical work', 'Renovation electrical work', 'Electrical supply enquiries'],
+    bullets: [
+      'Construction-related electrical work',
+      'Renovation electrical work',
+      'Electrical supply enquiries',
+    ],
     icon: 'zap',
   },
   {
     slug: 'plumbing',
     title: 'Plumbing',
-    shortDescription: 'Plumbing work for building, renovation and maintenance-related requirements.',
+    shortDescription:
+      'Plumbing work for building, renovation and maintenance-related requirements.',
     description:
       'Plumbing services for residential and general building needs, with plumbing materials available to enquire about separately.',
     bullets: ['New-build plumbing', 'Renovation plumbing', 'Plumbing supply enquiries'],
@@ -58,10 +65,15 @@ export const services: readonly ServiceItem[] = [
   {
     slug: 'carpentry',
     title: 'Carpentry',
-    shortDescription: 'Carpentry and timber-related building work for selected project requirements.',
+    shortDescription:
+      'Carpentry and timber-related building work for selected project requirements.',
     description:
       'Carpentry support for construction and renovation projects, including timber-related installation and finishing requirements.',
-    bullets: ['Construction carpentry', 'Renovation carpentry', 'Timber and board supply enquiries'],
+    bullets: [
+      'Construction carpentry',
+      'Renovation carpentry',
+      'Timber and board supply enquiries',
+    ],
     icon: 'ruler',
   },
   {
@@ -76,7 +88,8 @@ export const services: readonly ServiceItem[] = [
   {
     slug: 'building-materials',
     title: 'Building Material Supply',
-    shortDescription: 'Enquiries for building and housing materials across a broad range of categories.',
+    shortDescription:
+      'Enquiries for building and housing materials across a broad range of categories.',
     description:
       'A dedicated supply service for clients who need construction and housing materials without an online checkout or fixed public price list.',
     bullets: ['Multiple material categories', 'Price enquiries', 'Supply and delivery discussions'],

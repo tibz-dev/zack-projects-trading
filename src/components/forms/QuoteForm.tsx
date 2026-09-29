@@ -11,11 +11,19 @@ import { services } from '../../data/services';
 
 const quoteSchema = z.object({
   name: z.string().trim().min(2, content.contact.validation.name),
-  phone: z.string().trim().min(7, content.contact.validation.phone).max(30, content.contact.validation.phoneTooLong),
+  phone: z
+    .string()
+    .trim()
+    .min(7, content.contact.validation.phone)
+    .max(30, content.contact.validation.phoneTooLong),
   email: z.union([z.string().trim().email(content.contact.validation.email), z.literal('')]),
   need: z.string().min(1, content.contact.validation.need),
   location: z.string().trim().min(2, content.contact.validation.location),
-  message: z.string().trim().min(10, content.contact.validation.message).max(3000, content.contact.validation.messageTooLong),
+  message: z
+    .string()
+    .trim()
+    .min(10, content.contact.validation.message)
+    .max(3000, content.contact.validation.messageTooLong),
   _gotcha: z.string().max(0, content.contact.validation.spam),
 });
 
@@ -68,7 +76,9 @@ export function QuoteForm() {
     setStatus('submitting');
 
     const selectedService = services.find((service) => `service:${service.slug}` === values.need);
-    const selectedMaterial = materialCategories.find((material) => `material:${material.slug}` === values.need);
+    const selectedMaterial = materialCategories.find(
+      (material) => `material:${material.slug}` === values.need,
+    );
     const needLabel = selectedService?.title ?? selectedMaterial?.title ?? values.need;
 
     try {
@@ -123,25 +133,66 @@ export function QuoteForm() {
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-semibold text-ink">
           {content.contact.fields.name}
-          <input id="quote-name" autoComplete="name" className={fieldClass} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'quote-name-error' : undefined} {...register('name')} />
-          {errors.name ? <span id="quote-name-error" className="mt-1 block text-sm text-maroon">{errors.name.message}</span> : null}
+          <input
+            id="quote-name"
+            autoComplete="name"
+            className={fieldClass}
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? 'quote-name-error' : undefined}
+            {...register('name')}
+          />
+          {errors.name ? (
+            <span id="quote-name-error" className="mt-1 block text-sm text-maroon">
+              {errors.name.message}
+            </span>
+          ) : null}
         </label>
 
         <label className="block text-sm font-semibold text-ink">
           {content.contact.fields.phone}
-          <input id="quote-phone" autoComplete="tel" inputMode="tel" className={fieldClass} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? 'quote-phone-error' : undefined} {...register('phone')} />
-          {errors.phone ? <span id="quote-phone-error" className="mt-1 block text-sm text-maroon">{errors.phone.message}</span> : null}
+          <input
+            id="quote-phone"
+            autoComplete="tel"
+            inputMode="tel"
+            className={fieldClass}
+            aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? 'quote-phone-error' : undefined}
+            {...register('phone')}
+          />
+          {errors.phone ? (
+            <span id="quote-phone-error" className="mt-1 block text-sm text-maroon">
+              {errors.phone.message}
+            </span>
+          ) : null}
         </label>
 
         <label className="block text-sm font-semibold text-ink">
           {content.contact.fields.email}
-          <input id="quote-email" autoComplete="email" type="email" className={fieldClass} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'quote-email-error' : undefined} {...register('email')} />
-          {errors.email ? <span id="quote-email-error" className="mt-1 block text-sm text-maroon">{errors.email.message}</span> : null}
+          <input
+            id="quote-email"
+            autoComplete="email"
+            type="email"
+            className={fieldClass}
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? 'quote-email-error' : undefined}
+            {...register('email')}
+          />
+          {errors.email ? (
+            <span id="quote-email-error" className="mt-1 block text-sm text-maroon">
+              {errors.email.message}
+            </span>
+          ) : null}
         </label>
 
         <label className="block text-sm font-semibold text-ink">
           {content.contact.fields.need}
-          <select id="quote-need" className={fieldClass} aria-invalid={Boolean(errors.need)} aria-describedby={errors.need ? 'quote-need-error' : undefined} {...register('need')}>
+          <select
+            id="quote-need"
+            className={fieldClass}
+            aria-invalid={Boolean(errors.need)}
+            aria-describedby={errors.need ? 'quote-need-error' : undefined}
+            {...register('need')}
+          >
             <option value="">{content.contact.fields.needPlaceholder}</option>
             <optgroup label={content.common.servicesGroup}>
               {services.map((service) => (
@@ -158,14 +209,29 @@ export function QuoteForm() {
               ))}
             </optgroup>
           </select>
-          {errors.need ? <span id="quote-need-error" className="mt-1 block text-sm text-maroon">{errors.need.message}</span> : null}
+          {errors.need ? (
+            <span id="quote-need-error" className="mt-1 block text-sm text-maroon">
+              {errors.need.message}
+            </span>
+          ) : null}
         </label>
       </div>
 
       <label className="mt-5 block text-sm font-semibold text-ink">
         {content.contact.fields.location}
-        <input id="quote-location" autoComplete="street-address" className={fieldClass} aria-invalid={Boolean(errors.location)} aria-describedby={errors.location ? 'quote-location-error' : undefined} {...register('location')} />
-        {errors.location ? <span id="quote-location-error" className="mt-1 block text-sm text-maroon">{errors.location.message}</span> : null}
+        <input
+          id="quote-location"
+          autoComplete="street-address"
+          className={fieldClass}
+          aria-invalid={Boolean(errors.location)}
+          aria-describedby={errors.location ? 'quote-location-error' : undefined}
+          {...register('location')}
+        />
+        {errors.location ? (
+          <span id="quote-location-error" className="mt-1 block text-sm text-maroon">
+            {errors.location.message}
+          </span>
+        ) : null}
       </label>
 
       <label className="mt-5 block text-sm font-semibold text-ink">
@@ -179,7 +245,11 @@ export function QuoteForm() {
           placeholder={content.contact.fields.messagePlaceholder}
           {...register('message')}
         />
-        {errors.message ? <span id="quote-message-error" className="mt-1 block text-sm text-maroon">{errors.message.message}</span> : null}
+        {errors.message ? (
+          <span id="quote-message-error" className="mt-1 block text-sm text-maroon">
+            {errors.message.message}
+          </span>
+        ) : null}
       </label>
 
       <div className="absolute -left-[9999px]" aria-hidden="true">
@@ -190,23 +260,36 @@ export function QuoteForm() {
       </div>
 
       {status === 'success' ? (
-        <div className="mt-5 flex gap-3 rounded-md border border-green-700 bg-green-50 p-4 text-sm text-green-900" role="status">
+        <div
+          className="mt-5 flex gap-3 rounded-md border border-green-700 bg-green-50 p-4 text-sm text-green-900"
+          role="status"
+        >
           <CheckCircle2 className="shrink-0" aria-hidden="true" size={20} />
-          <span><strong>{content.contact.successTitle}.</strong> {content.contact.successBody}</span>
+          <span>
+            <strong>{content.contact.successTitle}.</strong> {content.contact.successBody}
+          </span>
         </div>
       ) : null}
 
       {status === 'config-error' ? (
-        <div className="mt-5 flex gap-3 rounded-md border border-maroon bg-red-50 p-4 text-sm text-maroon" role="alert">
+        <div
+          className="mt-5 flex gap-3 rounded-md border border-maroon bg-red-50 p-4 text-sm text-maroon"
+          role="alert"
+        >
           <AlertCircle className="shrink-0" aria-hidden="true" size={20} />
           <span>{content.contact.configError}</span>
         </div>
       ) : null}
 
       {status === 'error' ? (
-        <div className="mt-5 flex gap-3 rounded-md border border-maroon bg-red-50 p-4 text-sm text-maroon" role="alert">
+        <div
+          className="mt-5 flex gap-3 rounded-md border border-maroon bg-red-50 p-4 text-sm text-maroon"
+          role="alert"
+        >
           <AlertCircle className="shrink-0" aria-hidden="true" size={20} />
-          <span><strong>{content.contact.errorTitle}.</strong> {content.contact.errorBody}</span>
+          <span>
+            <strong>{content.contact.errorTitle}.</strong> {content.contact.errorBody}
+          </span>
         </div>
       ) : null}
 

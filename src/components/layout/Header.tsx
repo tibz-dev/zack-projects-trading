@@ -28,7 +28,10 @@ export function Header() {
       <div className="site-container flex min-h-20 items-center justify-between gap-4">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label={content.common.primaryNavigation}>
+        <nav
+          className="hidden items-center gap-1 lg:flex"
+          aria-label={content.common.primaryNavigation}
+        >
           {navigation.map((item) => (
             <NavLink
               key={item.href}
@@ -64,7 +67,11 @@ export function Header() {
       </div>
 
       {open ? (
-        <nav id="mobile-navigation" className="border-t border-white/10 bg-slate lg:hidden" aria-label={content.common.mobileNavigation}>
+        <nav
+          id="mobile-navigation"
+          className="border-t border-white/10 bg-slate lg:hidden"
+          aria-label={content.common.mobileNavigation}
+        >
           <div className="site-container flex flex-col py-3">
             {navigation.map((item) => (
               <NavLink

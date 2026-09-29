@@ -25,18 +25,39 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <Seo title={content.seo.projects.title} description={content.seo.projects.description} path="/projects" />
-      <PageHero eyebrow={content.projects.eyebrow} title={content.projects.title} intro={content.projects.intro} />
+      <Seo
+        title={content.seo.projects.title}
+        description={content.seo.projects.description}
+        path="/projects"
+      />
+      <PageHero
+        eyebrow={content.projects.eyebrow}
+        title={content.projects.title}
+        intro={content.projects.intro}
+      />
 
       <section className="section-spacing bg-offwhite">
         <div className="site-container">
           {availableFilters.length > 0 ? (
-            <div className="mb-8 flex flex-wrap gap-2" role="group" aria-label={content.common.filterProjects}>
-              <button type="button" onClick={() => setFilter('all')} className={`min-h-11 rounded-md border px-4 py-2 text-sm font-bold ${filter === 'all' ? 'border-maroon bg-maroon text-white' : 'border-lightgrey bg-white text-slate hover:border-maroon'}`}>
+            <div
+              className="mb-8 flex flex-wrap gap-2"
+              role="group"
+              aria-label={content.common.filterProjects}
+            >
+              <button
+                type="button"
+                onClick={() => setFilter('all')}
+                className={`min-h-11 rounded-md border px-4 py-2 text-sm font-bold ${filter === 'all' ? 'border-maroon bg-maroon text-white' : 'border-lightgrey bg-white text-slate hover:border-maroon'}`}
+              >
                 {content.projects.allFilter}
               </button>
               {availableFilters.map((service) => (
-                <button key={service.slug} type="button" onClick={() => setFilter(service.slug)} className={`min-h-11 rounded-md border px-4 py-2 text-sm font-bold ${filter === service.slug ? 'border-maroon bg-maroon text-white' : 'border-lightgrey bg-white text-slate hover:border-maroon'}`}>
+                <button
+                  key={service.slug}
+                  type="button"
+                  onClick={() => setFilter(service.slug)}
+                  className={`min-h-11 rounded-md border px-4 py-2 text-sm font-bold ${filter === service.slug ? 'border-maroon bg-maroon text-white' : 'border-lightgrey bg-white text-slate hover:border-maroon'}`}
+                >
                   {service.title}
                 </button>
               ))}
@@ -45,7 +66,9 @@ export default function ProjectsPage() {
 
           {visibleProjects.length > 0 ? (
             <div className="grid gap-7 lg:grid-cols-2">
-              {visibleProjects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+              {visibleProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
             </div>
           ) : (
             <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">

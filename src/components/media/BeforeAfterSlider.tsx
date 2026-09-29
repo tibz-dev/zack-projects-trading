@@ -21,7 +21,9 @@ export function BeforeAfterSlider({
 
   return (
     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-lightgrey">
-      <span className="sr-only">{beforeAlt}. {afterAlt}.</span>
+      <span className="sr-only">
+        {beforeAlt}. {afterAlt}.
+      </span>
       <div className="absolute inset-0">
         <ResponsiveImage
           path={beforePath}
@@ -56,8 +58,12 @@ export function BeforeAfterSlider({
         </span>
       </div>
 
-      <span className="absolute left-3 top-3 rounded bg-slate px-2 py-1 text-xs font-bold text-white">{content.common.before}</span>
-      <span className="absolute right-3 top-3 rounded bg-slate px-2 py-1 text-xs font-bold text-white">{content.common.after}</span>
+      <span className="absolute left-3 top-3 rounded bg-slate px-2 py-1 text-xs font-bold text-white">
+        {content.common.before}
+      </span>
+      <span className="absolute right-3 top-3 rounded bg-slate px-2 py-1 text-xs font-bold text-white">
+        {content.common.after}
+      </span>
 
       <label htmlFor={sliderId} className="sr-only">
         {content.common.adjustComparison}

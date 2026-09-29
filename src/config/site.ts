@@ -6,7 +6,8 @@ export const siteConfig = {
   phoneE164: '+27720427322',
   whatsappNumber: '27720427322',
   email: 'zackprojects1@gmail.com',
-  emailStatus: 'TODO_CONFIRM: card shows zackprojects1@gmail.com; brief also references info@zackprojects.co.za.',
+  emailStatus:
+    'TODO_CONFIRM: card shows zackprojects1@gmail.com; brief also references info@zackprojects.co.za.',
   address: '215 Howard St, Pretoria North, Pretoria, 0116',
   addressStructured: {
     streetAddress: '215 Howard St',

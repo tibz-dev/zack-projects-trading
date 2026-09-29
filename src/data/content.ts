@@ -4,27 +4,33 @@ export const content = {
   seo: {
     home: {
       title: 'Construction & Building Materials in Pretoria',
-      description: 'Zack Projects & Trading provides construction, renovations, specialist building services, transport and building material supply in Pretoria and surrounds.',
+      description:
+        'Zack Projects & Trading provides construction, renovations, specialist building services, transport and building material supply in Pretoria and surrounds.',
     },
     services: {
       title: 'Services',
-      description: 'Construction, renovation, tiling, paving, electrical, plumbing, carpentry, transport and building material supply services in Pretoria.',
+      description:
+        'Construction, renovation, tiling, paving, electrical, plumbing, carpentry, transport and building material supply services in Pretoria.',
     },
     materials: {
       title: 'Building Materials',
-      description: 'Browse building material categories supplied by Zack Projects & Trading and request a tailored price enquiry in Pretoria.',
+      description:
+        'Browse building material categories supplied by Zack Projects & Trading and request a tailored price enquiry in Pretoria.',
     },
     projects: {
       title: 'Projects',
-      description: 'View real Zack Projects & Trading project galleries and before-and-after comparisons as client project media is added.',
+      description:
+        'View real Zack Projects & Trading project galleries and before-and-after comparisons as client project media is added.',
     },
     about: {
       title: 'About',
-      description: 'Learn about Zack Projects & Trading, a Pretoria-based construction and building material supply business serving Pretoria and surrounds.',
+      description:
+        'Learn about Zack Projects & Trading, a Pretoria-based construction and building material supply business serving Pretoria and surrounds.',
     },
     contact: {
       title: 'Contact & Request a Quote',
-      description: 'Contact Zack Projects & Trading for construction services, building material enquiries and quotations in Pretoria and surrounding areas.',
+      description:
+        'Contact Zack Projects & Trading for construction services, building material enquiries and quotations in Pretoria and surrounding areas.',
     },
     notFound: {
       title: 'Page Not Found',
@@ -39,9 +45,18 @@ export const content = {
     primaryCta: 'Request a Quote',
     secondaryCta: 'Browse Building Materials',
     heroFeatures: [
-      { title: 'Construction services', description: 'New builds, renovations and specialist trade work.' },
-      { title: 'Material supply', description: 'Enquire across major building and housing material categories.' },
-      { title: 'Transport support', description: 'Discuss delivery and project-related hauling requirements.' },
+      {
+        title: 'Construction services',
+        description: 'New builds, renovations and specialist trade work.',
+      },
+      {
+        title: 'Material supply',
+        description: 'Enquire across major building and housing material categories.',
+      },
+      {
+        title: 'Transport support',
+        description: 'Discuss delivery and project-related hauling requirements.',
+      },
     ],
     servicesTitle: 'Construction services for complete and focused jobs',
     servicesIntro:
@@ -55,15 +70,18 @@ export const content = {
     whyItems: [
       {
         title: 'Services and materials together',
-        description: 'Discuss building work and the materials required for the same project in one enquiry.',
+        description:
+          'Discuss building work and the materials required for the same project in one enquiry.',
       },
       {
         title: 'Quote-based pricing',
-        description: 'Pricing is provided against the real scope, quantities, location and material requirements.',
+        description:
+          'Pricing is provided against the real scope, quantities, location and material requirements.',
       },
       {
         title: 'Pretoria-based',
-        description: 'The business is based in Pretoria North and serves Pretoria and surrounding areas.',
+        description:
+          'The business is based in Pretoria North and serves Pretoria and surrounding areas.',
       },
     ] satisfies readonly ValueItem[],
     projectsTitle: 'Project work',
@@ -142,15 +160,18 @@ export const content = {
     values: [
       {
         title: 'Start with the real scope',
-        description: 'Quotations should be based on the actual work, quantity, specification and project location.',
+        description:
+          'Quotations should be based on the actual work, quantity, specification and project location.',
       },
       {
         title: 'Keep communication clear',
-        description: 'Clients should know what information is needed before work or supply can be priced accurately.',
+        description:
+          'Clients should know what information is needed before work or supply can be priced accurately.',
       },
       {
         title: 'Keep the offering practical',
-        description: 'Construction, trade services, transport and materials can be discussed according to what the project needs.',
+        description:
+          'Construction, trade services, transport and materials can be discussed according to what the project needs.',
       },
     ] satisfies readonly ValueItem[],
     managementTitle: 'Management',
@@ -171,7 +192,8 @@ export const content = {
       location: 'Project / delivery location',
       message: 'Message',
       needPlaceholder: 'Select a service or material category',
-      messagePlaceholder: 'Tell us about the work, quantities, specifications or delivery requirements.',
+      messagePlaceholder:
+        'Tell us about the work, quantities, specifications or delivery requirements.',
     },
     validation: {
       name: 'Enter your name.',

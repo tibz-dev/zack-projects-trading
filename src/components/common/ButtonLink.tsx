@@ -14,12 +14,7 @@ const variantClasses = {
   'dark-outline': 'border-lightgrey bg-transparent text-white hover:bg-white hover:text-maroon',
 } as const;
 
-export function ButtonLink({
-  to,
-  children,
-  variant = 'primary',
-  className = '',
-}: ButtonLinkProps) {
+export function ButtonLink({ to, children, variant = 'primary', className = '' }: ButtonLinkProps) {
   return (
     <Link
       to={to}

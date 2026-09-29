@@ -8,8 +8,16 @@ import { content } from '../data/content';
 export default function AboutPage() {
   return (
     <>
-      <Seo title={content.seo.about.title} description={content.seo.about.description} path="/about" />
-      <PageHero eyebrow={content.about.eyebrow} title={content.about.title} intro={content.about.intro} />
+      <Seo
+        title={content.seo.about.title}
+        description={content.seo.about.description}
+        path="/about"
+      />
+      <PageHero
+        eyebrow={content.about.eyebrow}
+        title={content.about.title}
+        intro={content.about.intro}
+      />
 
       <section className="section-spacing bg-offwhite">
         <div className="site-container grid gap-10 lg:grid-cols-2 lg:gap-16">
@@ -42,8 +50,16 @@ export default function AboutPage() {
 
       <section className="bg-slate py-12 text-white">
         <div className="site-container flex flex-col gap-4 sm:flex-row sm:items-center">
-          <div className="flex size-12 items-center justify-center rounded-md bg-ink text-yellow"><UserRound aria-hidden="true" /></div>
-          <div><p className="text-sm font-bold uppercase tracking-[0.14em] text-yellow">{content.about.managementTitle}</p><h2 className="text-2xl font-bold">{siteConfig.contactPerson}</h2><p className="text-lightgrey">{siteConfig.contactRole}</p></div>
+          <div className="flex size-12 items-center justify-center rounded-md bg-ink text-yellow">
+            <UserRound aria-hidden="true" />
+          </div>
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.14em] text-yellow">
+              {content.about.managementTitle}
+            </p>
+            <h2 className="text-2xl font-bold">{siteConfig.contactPerson}</h2>
+            <p className="text-lightgrey">{siteConfig.contactRole}</p>
+          </div>
         </div>
       </section>
 

@@ -23,7 +23,12 @@ export function ProjectCard({ project, headingLevel = 'h2' }: ProjectCardProps) 
     items.push({ path: project.images.before, alt: project.alt.before });
     items.push({ path: project.images.after, alt: project.alt.after });
     project.images.gallery?.forEach((path, index) => {
-      items.push({ path, alt: project.alt.gallery?.[index] ?? `${project.title} ${content.common.galleryImageFallback} ${index + 1}` });
+      items.push({
+        path,
+        alt:
+          project.alt.gallery?.[index] ??
+          `${project.title} ${content.common.galleryImageFallback} ${index + 1}`,
+      });
     });
     return items;
   }, [project]);
@@ -87,7 +92,12 @@ export function ProjectCard({ project, headingLevel = 'h2' }: ProjectCardProps) 
         ) : null}
       </div>
 
-      <Lightbox images={gallery} initialIndex={initialIndex} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
+      <Lightbox
+        images={gallery}
+        initialIndex={initialIndex}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </article>
   );
 }

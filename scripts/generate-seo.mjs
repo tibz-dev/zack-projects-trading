@@ -11,7 +11,10 @@ async function readEnvFile(path) {
         .map((line) => {
           const separator = line.indexOf('=');
           const key = line.slice(0, separator).trim();
-          const value = line.slice(separator + 1).trim().replace(/^['"]|['"]$/g, '');
+          const value = line
+            .slice(separator + 1)
+            .trim()
+            .replace(/^['"]|['"]$/g, '');
           return [key, value];
         }),
     );
@@ -23,7 +26,10 @@ async function readEnvFile(path) {
 const localEnv = await readEnvFile('.env.local');
 const baseEnv = await readEnvFile('.env');
 const rawSiteUrl =
-  process.env.VITE_SITE_URL || localEnv.VITE_SITE_URL || baseEnv.VITE_SITE_URL || 'https://example.invalid';
+  process.env.VITE_SITE_URL ||
+  localEnv.VITE_SITE_URL ||
+  baseEnv.VITE_SITE_URL ||
+  'https://example.invalid';
 const siteUrl = rawSiteUrl.replace(/\/$/, '');
 const routes = ['/', '/services', '/building-materials', '/projects', '/about', '/contact'];
 
@@ -39,5 +45,7 @@ await Promise.all([
 ]);
 
 if (siteUrl.includes('example.invalid')) {
-  console.warn('SEO files generated with example.invalid. Set VITE_SITE_URL before production deployment.');
+  console.warn(
+    'SEO files generated with example.invalid. Set VITE_SITE_URL before production deployment.',
+  );
 }

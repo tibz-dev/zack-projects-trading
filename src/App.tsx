@@ -23,7 +23,11 @@ function ScrollToTop() {
 
 function RouteFallback() {
   return (
-    <div className="site-container flex min-h-[45vh] items-center justify-center py-16" role="status" aria-live="polite">
+    <div
+      className="site-container flex min-h-[45vh] items-center justify-center py-16"
+      role="status"
+      aria-live="polite"
+    >
       <span className="font-semibold text-slate">{content.common.loadingPage}</span>
     </div>
   );

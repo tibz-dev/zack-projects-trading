@@ -8,9 +8,14 @@ interface CredentialsStripProps {
 
 export function CredentialsStrip({ dark = false }: CredentialsStripProps) {
   return (
-    <section className={dark ? 'bg-slate text-white' : 'bg-white text-ink'} aria-labelledby="credentials-title">
+    <section
+      className={dark ? 'bg-slate text-white' : 'bg-white text-ink'}
+      aria-labelledby="credentials-title"
+    >
       <div className="site-container py-10">
-        <h2 id="credentials-title" className="text-2xl font-bold">{content.credentials.title}</h2>
+        <h2 id="credentials-title" className="text-2xl font-bold">
+          {content.credentials.title}
+        </h2>
         {credentials.length === 0 ? (
           <div className="mt-5 grid max-w-3xl gap-4 sm:grid-cols-[180px_1fr] sm:items-center">
             <ResponsiveImage
