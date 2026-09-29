@@ -3,7 +3,7 @@ name: Bootstrap Zack Projects website
 on:
   push:
     paths:
-      - ".bootstrap/project.zip.b64"
+      - ".bootstrap/ready"
 
 permissions:
   contents: write
@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base64 --decode .bootstrap/project.zip.b64 > /tmp/zack-projects.zip
+          cat .bootstrap/project.zip.b64.part-* | base64 --decode > /tmp/zack-projects.zip
           rm -rf /tmp/zack-projects-extracted
           mkdir -p /tmp/zack-projects-extracted
           unzip -q /tmp/zack-projects.zip -d /tmp/zack-projects-extracted
