@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-labelledby="title desc">
+  <title id="title">Zack Projects placeholder logo</title>
+  <desc id="desc">Temporary logo placeholder to be replaced by the client supplied SVG.</desc>
+  <rect width="180" height="64" rx="8" fill="#2F3640"/>
+  <rect x="4" y="4" width="56" height="56" rx="6" fill="none" stroke="#F2B705" stroke-width="2"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#F2B705">ZP</text>
+  <text x="72" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">ZACK PROJECTS</text>
+  <text x="72" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#E4E6E9">&amp; TRADING</text>
+</svg>
