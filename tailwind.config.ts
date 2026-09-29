@@ -6,7 +6,10 @@ export default {
   theme: {
     extend: {
       colors: brandTheme.colors,
-      fontFamily: brandTheme.fonts,
+      fontFamily: {
+        heading: [...brandTheme.fonts.heading],
+        body: [...brandTheme.fonts.body],
+      },
       boxShadow: {
         card: '0 14px 35px rgba(27, 31, 36, 0.08)',
       },
