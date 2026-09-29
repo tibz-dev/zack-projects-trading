@@ -111,7 +111,13 @@ export function QuoteForm() {
     'mt-2 min-h-12 w-full rounded-md border border-lightgrey bg-white px-3 py-2 text-ink shadow-sm placeholder:text-slate/70 focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20';
 
   return (
-    <form className="rounded-lg border border-lightgrey bg-white p-5 shadow-card sm:p-7" onSubmit={handleSubmit(submit)} noValidate>
+    <form
+      className="rounded-lg border border-lightgrey bg-white p-5 shadow-card sm:p-7"
+      onSubmit={(event) => {
+        void handleSubmit(submit)(event);
+      }}
+      noValidate
+    >
       <h2 className="text-3xl font-bold">{content.contact.formTitle}</h2>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
