@@ -21,11 +21,17 @@ jobs:
         run: |
           set -euo pipefail
           cat .bootstrap/project.zip.b64.part-* | base64 --decode > /tmp/zack-projects.zip
-          rm -rf /tmp/zack-projects-extracted
-          mkdir -p /tmp/zack-projects-extracted
+          rm -rf /tmp/zack-projects-extracted /tmp/bootstrap-workflows
+          mkdir -p /tmp/zack-projects-extracted /tmp/bootstrap-workflows
           unzip -q /tmp/zack-projects.zip -d /tmp/zack-projects-extracted
+          cp -a .github/workflows/. /tmp/bootstrap-workflows/
           git rm -rf .
           cp -a /tmp/zack-projects-extracted/zack-projects-trading/. .
+          rm -rf .github/workflows
+          mkdir -p .github/workflows
+          cp -a /tmp/bootstrap-workflows/. .github/workflows/
+          mkdir -p .bootstrap
+          printf 'ready-2\n' > .bootstrap/ready
 
       - name: Commit production source
         shell: bash
