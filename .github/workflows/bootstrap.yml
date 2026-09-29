@@ -23,7 +23,7 @@ jobs:
           rm -rf /tmp/zack-projects-extracted
           mkdir -p /tmp/zack-projects-extracted
           unzip -q /tmp/zack-projects.zip -d /tmp/zack-projects-extracted
-          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          git rm -rf .
           cp -a /tmp/zack-projects-extracted/zack-projects-trading/. .
 
       - name: Commit production source
